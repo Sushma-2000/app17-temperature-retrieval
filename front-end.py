@@ -4,6 +4,7 @@ import main
 import plotly.express as px
 import pandas as pd
 from datetime import datetime
+from streamlit_autorefresh import st_autorefresh
 
 st.title("Temperature Insights")
 
@@ -24,6 +25,11 @@ if col2.button("Stop"):
     st.session_state.scraping = False
     st.session_state.stop_time = datetime.now()
     main.stop_scraping_func()
+
+if st.session_state.scraping:
+    st.success("Scraping in progress...")
+else:
+    st.info("Scraping is stopped.")
 
 # Load and filter data
 try:
