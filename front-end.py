@@ -4,7 +4,6 @@ import main
 import plotly.express as px
 import pandas as pd
 from datetime import datetime
-from streamlit_autorefresh import st_autorefresh
 
 st.title("Temperature Insights")
 
